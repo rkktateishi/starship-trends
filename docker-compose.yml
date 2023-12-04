@@ -1,0 +1,20 @@
+version: "3"
+services:
+  starship-cost-api:
+    image: starship-cost-api
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+    ports:
+      - "8000:80"
+    environment:
+      - SWAPI_URL=https://swapi.dev/api/
+      - REDIS=redis://redis
+    volumes:
+      - ./backend:/code
+    depends_on:
+      - redis
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"

@@ -1,0 +1,7 @@
+fastapi
+fastapi-cache2[redis]
+redis
+requests
+requests-cache
+ujson
+uvicorn
