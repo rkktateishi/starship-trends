@@ -18,3 +18,12 @@ services:
     image: redis:alpine
     ports:
       - "6379:6379"
+  starship-charts:
+    image: starship-charts
+    build:
+      context: ./starship-charts
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./starship-charts:/starship-charts
